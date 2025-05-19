@@ -18,27 +18,27 @@ The "Catch the Falling Objects" project is an interactive web-based game develop
 
 **🧱 Core Components**
 
-HTML: Establishes the game's structure, including the game area, catcher, and falling objects.
+**HTML**: Establishes the game's structure, including the game area, catcher, and falling objects.
 
-CSS: The styling is done using CSS, which provides the layout, colors, and overall visual appeal of the game. It includes styles for the game container, scoreboard, and game over message.
+**CSS**: The styling is done using CSS, which provides the layout, colors, and overall visual appeal of the game. It includes styles for the game container, scoreboard, and game over message.
 
-JavaScript: Implements the game logic, handling object movement, collision detection, scoring, and user interactions ,The movement of the catcher based on user input, The spawning and updating of falling objects.
-
-
+**JavaScript**: Implements the game logic, handling object movement, collision detection, scoring, and user interactions ,The movement of the catcher based on user input, The spawning and updating of falling objects.
 
 
 
 
 
-#**🎮 Usage**
 
-Controls:
+
+**🎮 Usage**
+
+**Controls:**
 
 Use the Left Arrow and Right Arrow keys to move the catcher horizontally.
 
 Alternatively, move the mouse left or right to control the catcher.
 
-Objective:
+**Objective:**
 
 Catch as many falling objects as possible.
 
