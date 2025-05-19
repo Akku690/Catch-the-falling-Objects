@@ -1,4 +1,4 @@
-**🎮 Catch the Falling Objects
+**🎮 Catch the Falling Objects**
 
 An interactive web-based game where players control a catcher to grab falling objects, enhancing reflexes and providing entertainment.
 
@@ -16,7 +16,7 @@ The "Catch the Falling Objects" project is an interactive web-based game develop
 
 
 
-#**🧱 Core Components**
+**🧱 Core Components**
 
 HTML: Establishes the game's structure, including the game area, catcher, and falling objects.
 
