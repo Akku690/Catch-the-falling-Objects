@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* Change to column to stack elements */
+  height: 100vh;
+
+  flex-direction: column;
+  /* Change to column to stack elements */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+
+  user-select: none;
+  background-color: #6177e4;
+}
+
+h1 {
+  color: #120202;
+  /* Set heading color */
+  text-shadow: 0 0 15px #ebeae5;
+  margin-bottom: 20px;
+  /* Space between heading and game container */
+  text-align: center;
+  /* Center the heading text */
+ 
+}
+
+#game-container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  background: #1e1e2f;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+#scoreboard {
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+#game-area {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(to bottom, #343499 0%, #00000c 100%);
+  overflow: hidden;
+}
+
+
+#basket {
+  position: absolute;
+  /* Positions the basket relative to its nearest positioned ancestor */
+  bottom: 20px;
+  /* Places the basket 20 pixels from the bottom of its containing element */
+  left: 160px;
+  /* Positions the basket 160 pixels from the left edge of its containing element */
+  width: 80px;
+  /* Sets the width of the basket to 80 pixels */
+  height: 30px;
+  /* Sets the height of the basket to 30 pixels */
+  background: linear-gradient(135deg, #ffd700, #ffbf00);
+  /* Applies a linear gradient background from gold to a lighter shade */
+  border-radius: 40px 40px 10px 10px;
+  /* Rounds the corners of the basket, with the top corners being more rounded than the bottom */
+  box-shadow: 0 0 10px #c1d3c3;
+  /* Adds a glowing shadow effect around the basket */
+  /* transform: translateX(-50%);                                This line is commented out; if active, it would center the basket horizontally by shifting it left by half its width */
+  transition: background 40s;
+  /* Sets a transition effect for the background color change, lasting 40 seconds */
+  z-index: 10;
+  /* Sets the stacking order of the basket, ensuring it appears above other elements with lower z-index values */
+}
+
+
+#basket::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 60px;
+  height: 10px;
+  background: #2a342a;
+  border-radius: 40px;
+  box-shadow: inset 0 3px 5px rgba(222, 196, 196, 0.3);
+  transform: translateX(-50%);
+}
+
+
+.falling-object {
+  position: absolute;
+  /* Positions the falling object absolutely within its nearest positioned ancestor */
+  width: 25px;
+  /* Sets the width of the falling object to 30 pixels */
+  height: 25px;
+  /* Sets the height of the falling object to 30 pixels */
+  top: 0;
+  /* Positions the top edge of the falling object at the top of its containing element */
+  border-radius: 50%;
+  /* Makes the falling object circular by rounding its corners */
+
+
+  background: linear-gradient(135deg, #dc0d0d, #c70000);
+  /* Applies a linear gradient background from a dark red to a lighter red */
+  box-shadow: 0 0 8px #4b2605;
+  /* Adds a subtle shadow effect around the falling object */
+
+}
+
+
+.falling-object.star {
+  background: radial-gradient(circle, #f9f871 45%, #f0d347 100%);
+  /* Applies a radial gradient background for star objects */
+  box-shadow: 0 0 12px #3f3f09;
+  /* Adds a more pronounced glow effect for star objects */
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(6000px);
+    /* Moves the object down by 600 pixels */
+  }
+}
+
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: #ffd600;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 15px #ffd600;
+  user-select: none;
+  z-index: 20;
+  display: none;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+}
+
+#restart-btn {
+  margin-top: 15px;
+  /* Adds a margin of 15 pixels above the button */
+  background: #e0c024;
+  /* Sets the background color of the button to a shade of yellow */
+  border: none;
+  /* Removes any default border from the button */
+  border-radius: 20px;
+  /* Rounds the corners of the button with a radius of 20 pixels */
+  padding: 10px 30px;
+  /* Adds padding of 10 pixels vertically and 30 pixels horizontally */
+  font-size: 1.03rem;
+  /* Sets the font size of the button text to 1.03 rem (relative to the root font size) */
+  font-weight: 700;
+  /* Sets the font weight to bold (700) */
+  color: #202020;
+  /* Sets the text color of the button to a dark gray */
+  cursor: pointer;
+  /* Changes the cursor to a pointer when hovering over the button, indicating it's clickable */
+  box-shadow: 0 5px 15px #a79d4d;
+  /* Adds a shadow effect below the button for depth */
+  transition: background-color 0 s;
+  /* Sets a transition effect for background color changes, lasting 0.3 seconds */
+  user-select: none;
+  /* Prevents the user from selecting the text inside the button */
+}
+
+
+#restart-btn:hover {
+  background: #ffea48;
+}
+
+@media (max-width: 450px) {
+  #game-container {
+    width: 100vw;
+    /* Sets the width of the game container to 100% of the viewport width */
+    height: 100vh;
+    /* Sets the height of the game container to 100% of the viewport height */
+    border-radius: 0;
+    /* Removes any border radius, making the corners square */
+  }
+}
+
+ /* .owner-name {
+    color: #110101; 
+    margin-top: 10px; 
+    text-align: center; 
+  } */
