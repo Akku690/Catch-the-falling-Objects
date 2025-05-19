@@ -8,7 +8,8 @@ HTML: The structure of the game is built using HTML, which includes a canvas ele
 
 CSS: The styling is done using CSS, which provides the layout, colors, and overall visual appeal of the game. It includes styles for the game container, scoreboard, and game over message.
 
-JavaScript: The game logic is implemented in JavaScript. It handles:
+JavaScript: The game logic is implemented in JavaScript. 
+It handles:
 
 The movement of the catcher based on user input.
 The spawning and updating of falling objects.
